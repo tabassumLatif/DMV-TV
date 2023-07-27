@@ -1,6 +1,5 @@
 package com.tabi.dmv_tv.ui.home;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +17,8 @@ import com.tabi.dmv_tv.models.Movie;
 import com.tabi.dmv_tv.models.Playlist;
 import com.tabi.dmv_tv.models.TvSpecial;
 import com.tabi.dmv_tv.network.NetworkApiClient;
-import com.tabi.dmv_tv.ui.home.adapter.CategoryAdapter;
 import com.tabi.dmv_tv.ui.player.PlaybackActivity;
+import com.tabi.dmv_tv.ui.home.adapter.CategoryAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,7 +64,7 @@ public class HomeActivity extends FragmentActivity {
                 movie.setTitle(video.getTitle());
                 movie.setVideoUrl(video.getContent().getVideos().get(0).getUrl());
                 movie.setDescription(video.getShortDescription());
-                intent.putExtra(PlaybackActivity.MOVIE, movie);
+                intent.putExtra("Movie", movie);
                 startActivity(intent);
             });
         }
